@@ -66,7 +66,7 @@ const MDXComponentsProvider = ({ meta, children, headings }: ComponentsProviderP
       }
     })
     return () => observer.disconnect()
-  }, [])
+  }, [headings, meta.title])
 
   return (
     <>

@@ -89,6 +89,7 @@ const Demo = ({ children, demo, source, initTab = 0, className }: DemoProps) => 
         lines[target - 1]?.classList?.add?.("highlight")
       })
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // キー押下時の処理

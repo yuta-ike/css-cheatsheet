@@ -5,7 +5,10 @@ import useId from "@/utils/useId"
 
 export type SearchBoxProps = React.ComponentProps<"input">
 
-const SearchBox = forwardRef<HTMLInputElement, SearchBoxProps>(({ className, ...props }, ref) => {
+const SearchBox = forwardRef<HTMLInputElement, SearchBoxProps>(function SearchBoxInner(
+  { className, ...props },
+  ref,
+) {
   const id = useId()
   return (
     <label className="relative flex cursor-text items-center rounded bg-white/10 px-2 text-sm text-twhite-400 focus-within:ring focus-within:ring-sky-400">
