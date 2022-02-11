@@ -1,0 +1,14 @@
+.box {
+  padding: 4px 8px;
+  border: 1px solid rgb(156, 163, 175);
+  border-radius: 4px;
+  background: rgb(71, 85, 105);
+}
+/* @@ */
+.box:focus {
+  outline: 2px solid #0073ff;
+}
+/* /@@ */
+.box::placeholder {
+  color: rgb(156, 163, 175);
+}

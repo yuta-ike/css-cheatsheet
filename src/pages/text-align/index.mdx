@@ -1,0 +1,51 @@
+---
+title: text-align
+description: 文書の水平割り付けを設定する
+category: タイポグラフィ（レイアウト）
+slug: text-align
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet1, { Preview as Preview1, source as source1 } from "./_snippet/snippet1.html"
+import Snippet2, { Preview as Preview2, source as source2 } from "./_snippet/snippet2.html"
+import Snippet3, { Preview as Preview3, source as source3 } from "./_snippet/snippet3.html"
+import Snippet4, { Preview as Preview4, source as source4 } from "./_snippet/snippet4.html"
+
+| value                    | description                                                                 |
+| :----------------------- | :-------------------------------------------------------------------------- |
+| `start`/`left` (default) | 左寄せ <span className="text-xs text-twhite-50">（日本語環境の場合）</span> |
+| `end`/`right`            | 右寄せ <span className="text-xs text-twhite-50">（日本語環境の場合）</span> |
+| `center`                 | 中央寄せ                                                                    |
+| `justify`                | 左右均等割付け                                                              |
+
+# Demo
+
+<Demo demo={<Preview1 />} source={source1}>
+  <Snippet1 />
+</Demo>
+
+# 概要
+
+文書を揃える方向を指定します。`start`/`left`が指定された場合は左寄せ、`end`/`right`が指定された場合は右寄せ、`center`が指定された場合は中央寄せ、`justify`が指定された場合は横いっぱいになるように文字間隔が広がります。
+
+## `start`/`left`、`end`/`right`の違い
+
+アラビア語のような右から左に記述する言語を利用する場合、`start`は右寄せになります。一方`left`は言語によらず左寄せになります。`end`/`right`も同様です。
+
+# Example
+
+<Demo demo={<Preview2 />} source={source2}>
+  <Snippet2 />
+</Demo>
+<Demo demo={<Preview3 />} source={source3}>
+  <Snippet3 />
+</Demo>
+<Demo demo={<Preview4 />} source={source4}>
+  <Snippet4 />
+</Demo>
+
+# 関連
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/text-align)

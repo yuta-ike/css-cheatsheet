@@ -1,0 +1,10 @@
+.style-1 {
+  line-height: 1.5;
+}
+.style-2 {
+  line-height: 2;
+}
+.wrapper {
+  display: flex;
+  font-size: 16px;
+}

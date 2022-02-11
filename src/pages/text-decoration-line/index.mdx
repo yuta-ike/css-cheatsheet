@@ -1,0 +1,41 @@
+---
+title: text-decoration-line
+description: 傍線を設定する
+category: タイポグラフィ（デザイン）
+slug: text-decoration-line
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value                    | description       |                                                                                       |
+| :----------------------- | :---------------- | :------------------------------------------------------------------------------------ |
+| `none`                   | 傍線なし          | <span>Tokyo Olympics</span>                                                           |
+| `underline`              | 下線              | <span className="underline">Tokyo Olympics</span>                                     |
+| `overline`               | 上線              | <span className="overline">Tokyo Olympics</span>                                      |
+| `line-through`           | 打ち消し線        | <span className="line-through">Tokyo Olympics</span>                                  |
+| `underline line-through` | 下線 + 打ち消し線 | <span className="[text-decoration-line:underline_line-through]">Tokyo Olympics</span> |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+**下線**や~~打ち消し線~~などを設定することができます。複数の値をスペース区切りで設定することもできます。
+
+通常は[`text-decoration`](/text-decoration)プロパティで、傍線に関する値をまとめて設定することが多いです。
+
+# 関連
+
+- [`text-decoration`](/text-decoration)
+- [`text-decoration-color`](/text-decoration-color)
+- [`text-decoration-style`](/text-decoration-style)
+- [`text-decoration-thickness`](/text-decoration-thickness)
+- [`text-underline-offset`](/text-underline-offset)
+
+# 参照
+
+- 参照

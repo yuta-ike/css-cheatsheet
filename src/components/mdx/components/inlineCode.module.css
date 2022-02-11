@@ -1,0 +1,4 @@
+.markdown-code:not(pre > .markdown-code) {
+  font-size: 0.95em;
+  @apply mx-1 rounded-sm bg-slate-700 px-1 font-mono tracking-tight first:ml-0 last:mr-0;
+}

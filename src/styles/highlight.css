@@ -1,0 +1,58 @@
+.token.line.highlight:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 20.5px;
+  @apply pointer-events-none bg-sky-400/10;
+}
+
+.token.line.highlight::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 4px;
+  height: 20.5px;
+  @apply pointer-events-none bg-sky-400/90;
+}
+
+.token.color {
+  @apply relative pl-3.5;
+}
+.token.color > .color-preview {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 100%;
+  @apply border border-white/50;
+}
+.token.color::before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 100%;
+  background: linear-gradient(
+      45deg,
+      rgba(197, 197, 197, 0.3) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(197, 197, 197, 0.3) 75%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(197, 197, 197, 0.3) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(197, 197, 197, 0.3) 75%
+    );
+  background-color: rgb(187, 187, 187, 30%);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 5px;
+}

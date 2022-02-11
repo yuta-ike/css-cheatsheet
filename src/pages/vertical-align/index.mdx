@@ -1,0 +1,97 @@
+---
+title: vertical-align
+description: 文字の縦方向の配置を指定する
+category: タイポグラフィ（レイアウト）
+slug: vertical-align
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+import ButtonSnippet, {
+  Preview as ButtonPreview,
+  source as buttonSource,
+} from "./_snippet/button.html"
+
+<p className="text-sm text-twhite-200">
+  {`下表の「自身の要素」の位置を、「親要素」の位置と合わせます。`}
+</p>
+
+| value         | 自身の要素                        | 親要素                                           |
+| :------------ | :-------------------------------- | :----------------------------------------------- |
+| `baseline`    | ベースライン[[\*]](#ベースライン) | ベースライン                                     |
+| `middle`      | 中央                              | ベースライン + `x-height`[[\*]](#x-height)の半分 |
+| `top`         | 上端                              | 行ボックス[[\*]](#行ボックス)の上端              |
+| `bottom`      | 下端                              | 行ボックス[[\*]](#行ボックス)の下端              |
+| `text-top`    | 上端                              | フォントサイズの上端                             |
+| `text-bottom` | 下端                              | フォントサイズの下端                             |
+| `sup`         | 上端                              | 上付き文字のベースライン                         |
+| `sub`         | 下端                              | 下付き文字のベースライン                         |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+行ボックスの中で、縦方向の配置を指定します。文の中に、サイズの小さい文字が含まれる場合、<span className="align-bottom text-sm bg-sky-400/30">下に揃えたり</span>、<span className="align-top text-sm bg-sky-400/30">上に揃えたり</span>、<span className="align-middle text-sm bg-sky-400/30">中央に揃えたり</span>することができます。
+
+上に揃える場合でも、<span className="align-top text-xs bg-sky-400/30">行の上端に揃えたり</span>（`top`）、<span className="align-text-top text-xs bg-sky-400/30">文字の上端に揃えたり</span>（`text-top`）する選択肢があります。
+
+<span className="text-sm text-twhite-50">
+  CSS の中でもわかりづらく、よくハマるプロパティでもあります。
+</span>
+
+## 注意事項
+
+行などの**インライン要素、インラインブロック要素、表のセルブロック要素でのみ使えるプロパティ**です。プロパティを見て分かる通り、親要素の行ボックスに依存した配置を行うものであり、ブロック要素の中央揃えを行うものではないからです。
+
+ブロック要素の垂直方向の中央揃えを行う場合は、[`justify-content`](/justify-content)や[`align-items`](/align-items)を用います。
+
+## ユースケース
+
+専ら、文頭や文末に挿入されるアイコンの位置を調整するのに使われることが多いです。この使い方を押さえておけば良いでしょう。
+
+<Demo demo={<ButtonPreview />} source={buttonSource}>
+  <ButtonSnippet />
+</Demo>
+
+{/* # Example */}
+
+# 用語
+
+## ベースライン
+
+アルファベットの基準となる線です。`g`、`j`、`p`、`q`、`y`などは、ベースラインより下に突き出ていることに注意してください。
+
+<div className="relative">
+  <p className="text-4xl">abcdefghijklmnopqrstuvwxyz</p>
+  <span className="absolute inset-0 border-b-2 border-sky-400 my-[5px]" />
+</div>
+
+## 行ボックス
+
+文章などの行を囲むボックスです。高さは[`line-height`](/line-height)の値により設定されます。
+
+<div className="relative border border-sky-400">
+  <p className="text-4xl">abcdefghijklmnopqrstuvwxyz</p>
+</div>
+
+## x-height
+
+アルファベットの小文字の`x`の高さです。`a`, `c`などの、上下に突き出ないアルファベットの高さと言い換えることもできます。
+
+<div className="relative">
+  <p className="text-4xl">abcdefghijklmnopqrstuvwxyz</p>
+  <span className="absolute inset-0 border-y-2 border-sky-400 my-[9px] transform translate-y-1" />
+</div>
+
+# 関連
+
+- flex デザイン
+- 中央揃え
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/vertical-align)

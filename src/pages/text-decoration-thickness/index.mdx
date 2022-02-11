@@ -1,0 +1,44 @@
+---
+title: text-decoration-thickness
+description: 傍線の太さを指定する
+category: タイポグラフィ（デザイン）
+slug: text-decoration-thickness
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value            | description                                                               |                                                                                |
+| :--------------- | :------------------------------------------------------------------------ | :----------------------------------------------------------------------------- |
+| `auto` (default) | ブラウザで決められている初期値の太さにする<br/>（Google Chrome では 1px） | <span className="underline">Tokyo Olympic</span>                               |
+| `1px`            | 太さを指定する                                                            | <span className="underline decoration-solid decoration-1">Tokyo Olympic</span> |
+| `2px`            | 太さを指定する                                                            | <span className="underline decoration-2">Tokyo Olympic</span>                  |
+| `4px`            | 太さを指定する                                                            | <span className="underline decoration-4">Tokyo Olympic</span>                  |
+
+# Demo
+
+<p class="!text-sm !text-twhite-50/80">
+  {`※ 太い線で破線になっているように見えるのは、"y"や"p"などのベースラインより下に突き出ているアルファベットでは、下線が途切れるようになっているためです。`}
+</p>
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+傍線の太さを設定することができます。
+
+通常は[`text-decoration`](/text-decoration)プロパティで、傍線に関する値をまとめて設定することが多いです。
+
+# 関連
+
+- [`text-decoration`](/text-decoration)
+- [`text-decoration-line`](/text-decoration-line)
+- [`text-decoration-color`](/text-decoration-color)
+- [`text-decoration-style`](/text-decoration-style)
+- [`text-underline-offset`](/text-underline-offset)
+
+# 参照
+
+- 参照

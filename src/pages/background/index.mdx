@@ -1,0 +1,242 @@
+---
+title: background
+description: 背景を設定する
+category: 背景
+slug: background
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import DemoBox from "@/components/mdx/components/DemoBox.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+import TextClipSnippet, {
+  Preview as TextClipPreview,
+  source as textClipSource,
+} from "./_snippet/text-clip.html"
+import ScrollSnippet, {
+  Preview as ScrollPreview,
+  source as scrollSource,
+} from "./_snippet/scroll.html"
+
+| value                                          | description                           |
+| :--------------------------------------------- | :------------------------------------ |
+| `rgb(56, 189, 248)`                            | 背景色を設定する                      |
+| `url("../img/image.png")`                      | 画像を設定する                        |
+| `linear-gradient(hotpink, blue)`               | グラデーションを設定する              |
+| `no-repeat center/80% url("../img/image.png")` | 中央寄せ、80%に縮小した画像を設定する |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+背景に関する以下のプロパティをまとめて指定するショートハンドです。
+
+ただし実際には複雑な背景を指定する場合はほとんどなく、`background: 色名;`の形で背景色を指定する場合が多いでしょう。（`background-color`でも良いですが、タイプ数が多いです。）
+
+|                                                   |                                          |
+| :------------------------------------------------ | :--------------------------------------- |
+| [`background-color`](#background-color)           | 背景色を設定する                         |
+| [`background-image`](#background-image)           | 背景に画像やグラデーションを設定する     |
+| [`background-size`](#background-size)             | 背景画像の伸縮を指定する                 |
+| [`background-position`](#background-position)     | 背景画像などの位置を設定する             |
+| [`background-clip`](#background-clip)             | 背景の切り取り方を設定する               |
+| [`background-repeat`](#background-repeat)         | 背景画像などの繰り返しパターンを設定する |
+| [`background-attachment`](#background-attachment) | スクロールした場合の挙動を設定する       |
+| `background-origin`                               | 背景の描画領域を設定する                 |
+
+# 背景関連プロパティ
+
+以下のプロパティは、個別に指定しても良いですし、まとめて`background`で指定しても構いません。
+
+export const Box = ({ style, children, className }) => (
+  <div
+    className={
+      "flex h-24 items-center justify-center break-all rounded border border-gray-200 p-4 text-center font-mono text-sm text-white " +
+      className
+    }
+    style={style}
+  >
+    <span className="bg-gray-500/50 backdrop-blur">{children}</span>
+  </div>
+)
+
+## `background-color`
+
+背景色を指定する。
+
+<DemoBox className="grid grid-cols-4 gap-3">
+  {["hotpink", "rgb(56, 189, 248)", "rgba(56, 189, 248, 50%)", "hsl(157, 56%, 40%)"].map(
+    (backgroundColor) => (
+      <Box key={backgroundColor} style={{ backgroundColor }}>
+        {backgroundColor}
+      </Box>
+    ),
+  )}
+</DemoBox>
+
+## `background-image`
+
+背景画像またはグラデーションを指定する。背景画像は、`url(/example.png)`の形で URL を指定します。
+
+画像のサイズと背景領域のサイズが合わない場合、デザインが崩れる可能性がある。
+これは後述の [`background-size`](#background-size)や[`background-repeat`](#background-repeat)などで調整する。
+
+<DemoBox className="grid grid-cols-4 gap-3">
+  {[
+    "url(/maritozzo.png)",
+    "url(/monster_small.png)",
+    "linear-gradient(hotpink, blue)",
+    "radial-gradient(blue 10px, hotpink 50%)",
+  ].map((backgroundImage) => (
+    <Box key={backgroundImage} style={{ backgroundImage }} className="bg-no-repeat">
+      {backgroundImage}
+    </Box>
+  ))}
+</DemoBox>
+
+グラデーションの指定方法については[こちら](/article/gradation)をご覧ください。
+
+## `background-size`
+
+背景画像の伸縮を指定します。`contain`と`cover`の違いを押さえておけば良いでしょう。
+
+<DemoBox className="grid grid-cols-4 gap-3">
+  {["contain", "cover", "30%", "50px 30px"].map((backgroundSize, i) => (
+    <Box
+      key={backgroundSize}
+      className={"bg-[url(/maritozzo.png)] " + (i < 2 ? "bg-no-repeat" : "")}
+      style={{ backgroundSize }}
+    >
+      {backgroundSize}
+    </Box>
+  ))}
+</DemoBox>
+
+※ `contain`のみ、`background-repeat: no-repeat;`を指定しています。
+
+| value       | description                                                                                                    |
+| :---------- | :------------------------------------------------------------------------------------------------------------- |
+| `contain`   | 背景画像全体が領域内に収まるように配置されます。縦横比によっては余白が生じますが、必ず画像全体が表示されます。 |
+| `cover`     | 領域全体が画像で覆われるように配置されます。余白が生じませんが、画像の一部が切り取られる場合があります。       |
+| `50%`       | 数値が 1 つ指定された場合、画像の横幅になります                                                                |
+| `30px 10px` | 数値が 2 つ指定された場合、1 つ目が画像の横幅、2 つ目が画像の高さになります                                    |
+
+- `cover`は画像の一部が入りきらなくても一定のサイズで表示したい場合に有効です。サムネイル画像などで用いられます。
+
+## `background-position`
+
+背景画像の位置を指定します。
+
+<DemoBox className="grid grid-cols-4 gap-3">
+  {["top", "center", "25% 70%", "bottom 12px right 24px"].map((backgroundPosition, i) => (
+    <Box
+      key={backgroundPosition}
+      className={
+        i < 2 ? "bg-cover bg-[url(/maritozzo.png)]" : "bg-no-repeat bg-[url(/monster_small.png)]"
+      }
+      style={{ backgroundPosition }}
+    >
+      {backgroundPosition}
+    </Box>
+  ))}
+</DemoBox>
+
+※ 最初の 2 つは`background-size: cover;`、後半二つは`background-repeat: no-repeat`を指定しています。
+
+| value                    | description                                                            |
+| :----------------------- | :--------------------------------------------------------------------- |
+| `center`                 | 背景画像を中央に合わせます                                             |
+| `top`                    | 背景画像を、領域の上辺に合わせます                                     |
+| `right`                  | 背景画像を、領域の右辺に合わせます                                     |
+| `bottom`                 | 背景画像を、領域の下辺に合わせます                                     |
+| `left`                   | 背景画像を、領域の左辺に合わせます                                     |
+| `25% 75%`                | 数値が 2 つ指定された場合、領域の左上からの X 座標・Y 座標になります。 |
+| `bottom 12px right 24px` | 各辺からの距離で指定します                                             |
+
+## `background-clip`
+
+画像の切り取り方を指定します。
+通常このプロパティを設定することはほぼありませんが、文字の塗りに写真やグラデーションを利用する際のテクニックで`background-clip: text;`が用いられます。
+
+<DemoBox className="grid grid-cols-4 gap-3">
+  {["border-box", "padding-box", "content-box", "text"].map((backgroundClip) => (
+    <div
+      key={backgroundClip}
+      className={
+        "flex h-24 items-center justify-center break-all rounded border-gray-200 p-4 text-center font-mono text-sm text-white bg-cover bg-[url(/maritozzo.png)] border-[12px] border-dashed " +
+        (backgroundClip === "text" ? "text-transparent text-xl font-black leading-none" : "")
+      }
+      style={{ backgroundClip, WebkitBackgroundClip: backgroundClip }}
+    >
+      {backgroundClip === "text" ? (
+        "MARITOZZO"
+      ) : (
+        <span className="bg-gray-500/50 backdrop-blur">{backgroundClip}</span>
+      )}
+    </div>
+  ))}
+</DemoBox>
+
+| value                  | description                                        |
+| :--------------------- | :------------------------------------------------- |
+| `border-box` (default) | 枠線が背景の上に重なる形になります。               |
+| `padding-box`          | 背景を枠線の内側までに制限します                   |
+| `content-box`          | 背景を`padding`の内側までに制限します              |
+| `text`                 | 背景画像を、テキストが重なっている部分に制限します |
+
+テキストで切り抜くテクニック場合は以下のスタイルを利用します。
+
+<Demo demo={<TextClipPreview />} source={textClipSource}>
+  <TextClipSnippet />
+</Demo>
+
+## `background-repeat`
+
+背景画像の繰り返しを指定します。繰り返しをさせたくない場合は、`no-repeat`を指定します。
+
+`no-repeat`のみ押さえておけば良いでしょう。
+
+<DemoBox className="grid grid-cols-4 gap-3">
+  {["no-repeat", "repeat", "repeat-x", "space"].map((backgroundRepeat, i) => (
+    <Box
+      key={backgroundRepeat}
+      className={"bg-[url(/monster_small.png)] " + (i < 2 ? "bg-no-repeat" : "")}
+      style={{ backgroundRepeat }}
+    >
+      {backgroundRepeat}
+    </Box>
+  ))}
+</DemoBox>
+
+| value              | description                                                                |
+| :----------------- | :------------------------------------------------------------------------- |
+| `repeat` (default) | 背景を繰り返します                                                         |
+| `no-repeat`        | 背景の繰り返しを行いません                                                 |
+| `repeat-x`         | x 軸方向へのみ、繰り返しを行います                                         |
+| `repeat-y`         | y 軸方向へのみ、繰り返しを行います                                         |
+| `space`            | 繰り返しを行いますが、端で画像が途中で切れないようにスペースで調整されます |
+
+## `background-attachment`
+
+スクロールした場合の挙動を設定する。
+
+<Demo demo={<ScrollPreview />} source={scrollSource}>
+  <ScrollSnippet />
+</Demo>
+
+| value    | description                                  |
+| :------- | :------------------------------------------- |
+| `fixed`  | 背景をビューポート（画面）に対して固定します |
+| `local`  | スクロールに応じて背景も移動する             |
+| `scroll` | スクロールしても背景は固定されたまま         |
+
+# 関連
+
+- [グラデーション](/article/gradation)
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/background)

@@ -1,0 +1,43 @@
+---
+title: outline-offset
+description: 要素とアウトラインの距離を指定する
+category: 枠線
+slug: outline-offset
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value    | description                        |
+| :------- | :--------------------------------- |
+| `1px`    | 要素とアウトラインの距離を指定する |
+| `0.4rem` | 要素とアウトラインの距離を指定する |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+アウトラインと、アウトラインで囲う要素の間の距離を指定します。
+
+`outline`のショートハンドには含まれませんので、個別に指定する必要があります。
+
+# Example
+
+```css
+.box {
+  outline: 1px solid hotpink;
+  outline-offset: 2px;
+}
+```
+
+# 関連
+
+- 関連
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/outline-offset)

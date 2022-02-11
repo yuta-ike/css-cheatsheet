@@ -1,0 +1,96 @@
+---
+title: outline
+description: アウトラインを指定します
+category: 枠線
+slug: outline
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value                         | description                  |
+| :---------------------------- | :--------------------------- |
+| `solid`                       | 枠線の種類を指定する         |
+| `1px solid rgb(56, 189, 248)` | 枠線の幅、種類、色を指定する |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+アウトラインを指定します。以下の 3 つのプロパティをまとめて指定できるショートハンドです。（`outline-offset`は含まれません）
+
+|                                           |                              |                                                             |
+| :---------------------------------------- | :--------------------------- | :---------------------------------------------------------- |
+| `outline-width`                           | 枠線の幅を指定します         | `px`で指定する場合がほとんどです                            |
+| `outline-style`                           | 枠線のスタイルを指定します   | `solid` `dashed` `dotted` `double` etc...(※)                |
+| `outline-color`                           | 枠線の色を指定します         |                                                             |
+|                                           |                              |                                                             |
+| \[参考\] <br/><div>`outline-offset`</div> | 枠線のオフセットを指定します | `outline`では指定できないため、個別に指定する必要があります |
+
+ほとんどの場合、フォーカス時のスタイルを指定する目的で利用されます。一般的に枠線を表現する場合は[border](/border)が適しています。
+
+## `border`との違い
+
+`border`はレイアウトに影響を与えますが、`outline`は影響を与えません。左側の入力欄はフォーカスが当たると`8px`の`border`が、右側の入力欄は`8px`の`outline`が表示されるようになっています。
+`border`が表示された場合、周りの文章等の位置がガタッとずれることがわかります。すなわちレイアウトに影響を与えます。一方`outline`は影響を与えません。（影響を与えないため、`outline`の文字も隠れてしまっています。）
+
+また、`outline-offset: 4px;`のように、要素と枠線の距離を指定できるのは`outline`のみです。
+
+<div className="flex space-x-4 !mt-8 !mb-10">
+  <div>
+    <p className="leading-none text-sm">border</p>
+    <input
+      type="text"
+      className="p-2 border border-gray-400 rounded placeholder:text-gray-300 bg-slate-600 focus:border-8 focus:border-blue-400 focus:outline-none"
+      placeholder="8px border"
+    />
+  </div>
+  <div>
+    <p className="leading-none text-sm">outline</p>
+    <input
+      type="text"
+      className="p-2 border border-gray-400 rounded placeholder:text-gray-300 bg-slate-600 outline-8 focus:outline outline-blue-400"
+      placeholder="8px outline"
+    />
+  </div>
+</div>
+
+フォーカス時のデザインのみ`outline`、それ以外の枠線のデザインは`border`という使い分けで問題ないでしょう。
+
+## フォーカス時の`outline`を無効化する
+
+ブラウザではフォーカスが当たると`outline`が付与されるようになっています。
+以下の入力ボックスをクリック（タップ）してみてください。
+
+<input
+  type="text"
+  className="p-2 border border-gray-400 rounded placeholder:text-gray-300 bg-slate-600 bordde  !mt-8 !mb-10"
+  placeholder="Click me!!"
+/>
+タップすると青い枠線が出現すると思います（ブラウザによってはデザインが異なるかもしれません）。この青い枠線がアウトラインです。
+
+ブラウザのデフォルトのデザインでは、入力要素などにフォーカスが当たると`outline`のスタイルが付与されるようになっています。
+正直このアウトラインはカッコ良くはないですが、**アクセシビリティの観点から必要なものである**とされています。
+例えばキーボードで操作しているユーザーに、今どの要素がフォーカスされているのかを知らせる役割があります。
+
+アウトラインを無効化する場合は、以下のような対策を行う必要があります。
+
+- `border`や`box-shadow`を用いて代替の表現を行う
+- `focus-visible`で`outline`を指定する
+
+例えばこのウェブサイトの左上（PC 表示）にある[「Quick search」](#search)は、`outline`を無効化し、`border`でフォーカスを表現しています。
+
+詳しくは[フォーカス時のアウトラインを無効化する](/article/disable-focus-outline)をご覧ください。
+
+# 関連
+
+- [border](/border)
+- [フォーカス時のアウトラインを無効化する](/article/disable-focus-outline)
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/outline)

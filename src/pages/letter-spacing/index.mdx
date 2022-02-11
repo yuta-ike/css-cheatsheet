@@ -1,0 +1,42 @@
+---
+title: letter-spacing
+description: 文字同士の間隔を指定します
+category: タイポグラフィ（レイアウト）
+slug: letter-spacing
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value              | description                      |                                                      |
+| :----------------- | :------------------------------- | :--------------------------------------------------- |
+| `normal` (default) | フォントの通常の間隔を適用します | <span className="tracking-[normal">あいうえお</span> |
+| `0px`              | 文字の間隔を指定する             | <span className="tracking-[0px]">あいうえお</span>   |
+| `2px`              | 文字の間隔を指定する             | <span className="tracking-[2px]">あいうえお</span>   |
+| `0.2em`            | 文字の間隔を指定する             | <span className="tracking-[0.2em]">あいうえお</span> |
+| `-1px`             | 文字の間隔に負の値を指定する     | <span className="tracking-[-1px]">あいうえお</span>  |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+文字の間隔を指定します。負の値も指定できますが、デザインが崩れる可能性があります。
+見出し、太字、強調箇所などで文字間隔を広げる場合に用いられます。
+
+このサイトでは、`hello`のようなコード表記の部分で、`letter-spacing: -0.025em;`を指定しています。
+
+## よく利用される値
+
+`px`, `em`を抑えておけば良いでしょう。`em`を利用すると「0.1 文字分のスペース（`0.1em`）」のように、文字サイズからの割合で指定することができます。
+
+# 関連
+
+- [line-height](/line-height) <span className="text-sm">（行の高さを指定）</span>
+
+# 参照
+
+- 参照

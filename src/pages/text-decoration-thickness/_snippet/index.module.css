@@ -1,0 +1,10 @@
+.style-1 {
+  text-decoration-thickness: 1px;
+}
+.style-2 {
+  text-decoration-thickness: 4px;
+}
+.line {
+  text-decoration-line: underline;
+  text-decoration-color: rgb(56, 189, 248);
+}

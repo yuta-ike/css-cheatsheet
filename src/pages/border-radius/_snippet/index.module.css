@@ -1,0 +1,23 @@
+.card-1 {
+  border-radius: 4px;
+}
+.card-2 {
+  border-radius: 50%;
+}
+.card-3 {
+  border-radius: 9999px;
+}
+.card-4 {
+  border-radius: 10% 30% 40% 70%;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: rgb(56, 189, 248);
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}

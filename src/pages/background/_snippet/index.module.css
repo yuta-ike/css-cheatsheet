@@ -1,0 +1,24 @@
+.box-1 {
+  background: rgb(56, 189, 248);
+}
+.box-2 {
+  background: no-repeat url("/monster.png");
+}
+.box-3 {
+  background: linear-gradient(hotpink, blue);
+}
+.box-4 {
+  background: no-repeat center/30% url("/monster.png");
+}
+
+.box {
+  width: 100%;
+  height: 100px;
+  border-radius: 12px;
+  border: 1px solid rgb(107, 107, 107);
+}
+.wrapper {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, 1fr);
+}

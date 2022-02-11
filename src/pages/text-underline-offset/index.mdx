@@ -1,0 +1,55 @@
+---
+title: text-underline-offset
+description: 下線のオフセット値を指定する
+category: タイポグラフィ（デザイン）
+slug: text-underline-offset
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value            | description                                                                  |                                                                     |
+| :--------------- | :--------------------------------------------------------------------------- | :------------------------------------------------------------------ |
+| `auto` (default) | ブラウザで決められている初期値の値にする<br/>（Google Chrome の場合は`0px`） | <span className="underline">Tokyo Olympic</span>                    |
+| `0px`            | オフセット値を指定する                                                       | <span className="underline underline-offset-0">Tokyo Olympic</span> |
+| `1px`            | オフセット値を指定する                                                       | <span className="underline underline-offset-1">Tokyo Olympic</span> |
+| `4px`            | オフセット値を指定する                                                       | <span className="underline underline-offset-4">Tokyo Olympic</span> |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+下線のオフセット値（離れる距離）を指定します。
+
+## 注意事項
+
+`text-decoration-xxx`系のプロパティと異なり、[`text-decoration`](/text-decoration)でまとめて設定することはできません。
+
+また、性質上[Example](#Example)のように`text-decoration: underline;`と一緒に用います。
+
+# Example
+
+```html
+<p>The <span class="line">Tokyo Olympics</span> were held in 2021.</p>
+```
+
+```css
+.line {
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+}
+```
+
+# 関連
+
+- [`text-decoration`](/text-decoration)
+- [`text-decoration-line`](/text-decoration-line)
+- [`text-decoration-color`](/text-decoration-color)
+- [`text-decoration-style`](/text-decoration-style)
+- [`text-decoration-thickness`](/text-decoration-thickness)
+
+# 参照

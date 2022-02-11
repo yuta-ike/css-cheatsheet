@@ -1,0 +1,15 @@
+.style-1 {
+  text-decoration: underline;
+}
+.style-2 {
+  text-decoration: underline blue 4px;
+}
+.style-3 {
+  text-decoration: underline dotted;
+}
+.style-4 {
+  text-decoration: underline wavy;
+}
+.style-5 {
+  text-decoration: overline;
+}

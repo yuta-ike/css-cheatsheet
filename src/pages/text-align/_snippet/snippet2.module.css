@@ -1,0 +1,9 @@
+.text {
+  /* @ */
+  text-align: end;
+  background: rgba(255, 255, 255, 5%);
+  border: 1px solid rgba(255, 255, 255, 20%);
+  padding: 4px;
+  border-radius: 4px;
+  position: relative;
+}

@@ -1,0 +1,39 @@
+---
+title: text-decoration-color
+description: 傍線の色を指定する
+category: タイポグラフィ（デザイン）
+slug: text-decoration-color
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value               | description    |                                                                                |
+| :------------------ | :------------- | ------------------------------------------------------------------------------ |
+| `hotpink`           | 色名による指定 | <span className="underline decoration-[hotpink]">Tokyo Olympics</span>         |
+| `rgb(56, 189, 248)` | rgb による指定 | <span className="underline decoration-[rgb(56_189_248)]">Tokyo Olympics</span> |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+傍線の色を指定することができます。色の指定方法は[色の指定方法](/article/color)を参照してください。
+
+通常は[`text-decoration`](/text-decoration)プロパティで、傍線に関する値をまとめて設定することが多いです。
+
+# 関連
+
+- [色の指定方法](/article/color)
+- [`text-decoration`](/text-decoration)
+- [`text-decoration-line`](/text-decoration-line)
+- [`text-decoration-style`](/text-decoration-style)
+- [`text-decoration-thickness`](/text-decoration-thickness)
+- [`text-underline-offset`](/text-underline-offset)
+
+# 参照
+
+- 参照

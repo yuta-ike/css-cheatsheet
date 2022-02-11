@@ -1,0 +1,15 @@
+.primary-line {
+  /* @ */
+  color: rgb(56, 189, 248);
+  font-size: 20px;
+}
+
+.sub-line {
+  /* @ */
+  color: rgba(56, 189, 248, 70%);
+}
+
+.wrapper {
+  font-weight: bold;
+  text-align: center;
+}

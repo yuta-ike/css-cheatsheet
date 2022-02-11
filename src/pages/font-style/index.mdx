@@ -1,0 +1,33 @@
+---
+title: font-style
+description: イタリック体・斜体を設定します
+category: タイポグラフィ（デザイン）
+slug: font-style
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value     | description        |                                                                   |
+| :-------- | :----------------- | :---------------------------------------------------------------- |
+| `italic`  | イタリック体で表示 | <span className="italic">ABC abc いろは 漢字</span>               |
+| `oblique` | 斜体で表示         | <span className="[font-style:oblique]">ABC abc いろは 漢字</span> |
+| `normal`  | 通常表示           | <span>ABC abc いろは</span>                                       |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+文字をイタリック体・斜体で表示します。少なくとも日本語サイトをコーディングする場合は多用しませんので、必要になれば調べる程度で大丈夫でしょう。
+
+なお、斜体は通常の書体を機械的に傾けたもので、イタリック体は傾いた文字になるようにデザインされたものを言います。利用しているフォントに斜体・イタリック体が存在しない場合、ブラウザが自動で傾いた表示に補正します。
+
+{/* ## 注意事項 */}
+
+# 関連
+
+# 参照

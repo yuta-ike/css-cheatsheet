@@ -1,0 +1,34 @@
+---
+title: font-weight
+description: 文字の太さを設定します
+category: タイポグラフィ（デザイン）
+slug: font-weight
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value           | description            |                                                        |
+| :-------------- | :--------------------- | :----------------------------------------------------- |
+| `400` (default) | 通常の太さで表示します | <span>ABC abc いろは 漢字</span>                       |
+| `700`           | 太字で表示します       | <span className="font-bold">ABC abc いろは 漢字</span> |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+文字の太さを変更します。太さは`100`\~`900`の`x00`形式で指定する場合が多いです。また各数字にはそれぞれ`bold`や`thin`などの[キーワード](https://developer.mozilla.org/ja/docs/Web/CSS/font-weight#%E4%B8%80%E8%88%AC%E7%9A%84%E3%81%AA%E5%A4%AA%E3%81%95%E5%90%8D%E3%81%A8%E3%81%AE%E5%AF%BE%E5%BF%9C)が対応しており、キーワードでの指定も可能です。
+
+## よく利用される値
+
+太さは柔軟に設定可能なものの、**基本的には標準（`400`）と太字（`700`）の 2 種類のみを利用する**場合がほとんどです。
+
+# 関連
+
+- [font-smoothing](/font-smoothing)
+
+# 参照

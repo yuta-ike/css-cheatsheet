@@ -1,0 +1,14 @@
+.box-1 {
+  border: 2px solid rgb(56, 189, 248);
+}
+.box-2 {
+  border: 2px dashed rgb(56, 189, 248);
+}
+.box-3 {
+  border: 2px dotted rgb(56, 189, 248);
+}
+
+.box {
+  padding: 12px;
+  margin: 12px;
+}

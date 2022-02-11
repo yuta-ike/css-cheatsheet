@@ -1,0 +1,25 @@
+.sans-serif {
+  /* @@ */
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
+    sans-serif;
+  /* /@@ */
+}
+.serif {
+  /* @ */
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+.code {
+  /* @@ */
+  font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  /* /@@ */
+}
+
+.title {
+  font-size: 14px;
+  color: rgba(175, 183, 194, 70%);
+}
+
+.wrapper + .wrapper {
+  margin-top: 16px;
+}

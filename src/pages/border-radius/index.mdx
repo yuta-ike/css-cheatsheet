@@ -1,0 +1,59 @@
+---
+title: border-radius
+description: 要素の境界を角丸にする
+category: 枠線
+slug: border-radius
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value             | description                                        |
+| :---------------- | :------------------------------------------------- |
+| `4px`             | 角丸の半径を`px`で指定する                         |
+| `25% 10%`         | 左上と右下の半径、右上と左下の半径を個別に指定する |
+| `10% 30% 50% 70%` | 角丸の半径を個別に指定する                         |
+| `9999px`          | 角丸を最大にする                                   |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+通常、要素の境界は長方形に設定されています。`border-radius`を利用することで、この境界を角丸にすることができます。
+プロパティ名に`border`とついていますが、`border`ではなく要素自体の形を変更します。例えば背景色を指定した要素に`border-radius`を適用した場合、背景色も角丸に切り取られます。
+
+## `9999px`のテクニック
+
+`border-radius`にとても大きな数字を指定するテクニックが存在します。Demo の C パターンのように角丸長方形を実現でき、ボタンなどに多用されます。
+本来`999px`や`9999px`のような関係のない数値を指定するのは避けるべきとされますが（コードから意図が読み取りづらいため）、`border-radius`の場合は有名なテクニックですので許容範囲内だと考えています。
+
+なお`50%`を指定した場合、正方形の場合は正常に動作しますが、長方形の場合は Demo の B パターンのように楕円になってしまいます。
+
+## さらにいびつな形を実現する
+
+実は`border-radius`には最大 8 つの値を指定することができます。
+
+```css
+.box {
+  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+}
+```
+
+詳細は割愛しますが、以下のようないびつな形を作り出すことができます。
+
+<div className="w-[160px] h-[160px] bg-sky-400 rounded-[70%_30%_30%_70%/60%_40%_60%_40%]" />
+
+なお、このような形を人力で調整するのは至難の業であるため、コードジェネレータが複数公開されています。
+興味のある方は「CSS border-radius generator」などで調べてみてください。
+（[FANCY-BORDER-RADIUS](https://9elements.github.io/fancy-border-radius/)はその一つです）
+
+# 関連
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/border-radius)
+- [FANCY-BORDER-RADIUS](https://9elements.github.io/fancy-border-radius/)

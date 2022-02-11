@@ -1,0 +1,62 @@
+---
+title: font-family
+description: フォントの種類を指定します。
+category: タイポグラフィ（デザイン）
+slug: font-family
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value             | description                              |                                    |
+| :---------------- | :--------------------------------------- | ---------------------------------- |
+| `<any font name>` | フォントを指定する                       |                                    |
+| `sans`            | 明朝体のデフォルトフォントを指定する     | <p className="font-sans">A/あ</p>  |
+| `sans-serif`      | ゴシック体のデフォルトフォントを指定する | <p className="font-serif">A/あ</p> |
+| `monospace`       | 等幅のデフォルトフォントを指定する       | <p className="font-mono">A/あ</p>  |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+{/* 🚧 WIP */}
+
+# 概要
+
+`font-family: aa, bb;`のように、利用するフォントをカンマ区切りで複数指定することができます。複数指定した場合、1 番目のフォントが適用されます。1 番目のフォントが端末に存在しない場合、2 番目、3 番目...のフォントが適用されます。
+
+端末に存在するフォントは OS や環境によって異なるため、複数指定しておく場合が多いです。
+
+## 注意事項
+
+- フォント名に空白を含む場合、`"`または`'`で囲む必要があります。（`'Hiragino Kaku Gothic ProN'`など）
+
+## 総称フォント
+
+- `serif`（明朝体）, `sans-serif`（ゴシック体）, `cursive`（筆記体）, `fantasy`（装飾体）, `monospace`（等幅）の 5 つのフォント名は総称フォントと呼ばれます。総称フォントが適用された場合、ブラウザ標準のフォントが適用されます。通常、総称フォントを `font-family` の一番最後に指定します。 これは `font-family` で指定したフォントがどれも存在しなかった場合の保険として機能します。
+
+# Example
+
+```html
+<p class="text">
+  あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+  hello, world normal text
+</p>
+```
+
+```css filename="index.js"
+.text {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
+    sans-serif;
+}
+```
+
+# 関連
+
+- Web フォントの利用
+
+# 参照
+
+- Web フォントの利用

@@ -1,0 +1,38 @@
+---
+title: font-variant-numeric
+description: 数字の表記
+category: タイポグラフィ（デザイン）
+slug: font-variant-numeric
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value <span className="text-xs">（一例）</span> | description            |
+| :---------------------------------------------- | :--------------------- |
+| `tabular-nums`                                  | 数字を同じ幅で表示する |
+| `normal`                                        | 標準表示               |
+
+# Demo
+
+（閲覧環境によっては違いが生じない場合があります）
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+数字（`3.14`）や分数（`1/2`）、序数（`1st`）の表示形式を指定します。
+
+フォントによっては、数字の幅が一定でないものがあります。例えば`1`は横幅が小さくデザインされていたり、`5`は横幅が大きくデザインされていたりします。
+通常は問題ありませんが、カウントダウンタイマーのように数字が変化していく場合、`00:01`と`00:05`では横幅が異なり見栄えが悪くなります。
+このような場合に`font-variant-numeric:tabular-nums;`を指定し、どの数字も同じ幅で表示する対策を行います。
+
+## よく利用する値
+
+筆者は`tabular-nums`しか使ったことがありません。それもたまにですので利用ケースは少ないでしょう。
+
+# 関連
+
+# 参照

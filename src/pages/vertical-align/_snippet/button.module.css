@@ -1,0 +1,11 @@
+.img {
+  /* @ */
+  vertical-align: -12px;
+  display: inline;
+  margin-right: 4px;
+  width: 36px;
+  height: 36px;
+}
+.button {
+  line-height: 2;
+}

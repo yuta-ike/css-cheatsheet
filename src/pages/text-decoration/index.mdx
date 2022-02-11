@@ -1,0 +1,70 @@
+---
+title: text-decoration
+description: 傍線のスタイルをまとめて設定する
+category: タイポグラフィ（デザイン）
+slug: text-decoration
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value                | description                                                                  |                                                                                 |
+| :------------------- | :--------------------------------------------------------------------------- | :------------------------------------------------------------------------------ |
+| `underline`          | 下線                                                                         | <span className="underline">Tokyo Olympic</span>                                |
+| `underline 4px blue` | 太さ（`text-decoration-thickness`）、色（`text-decoration-color`）を指定する | <span className="underline decoration-[blue] decoration-4">Tokyo Olympic</span> |
+| `underline dotted`   | 線の種類（`text-decoration-style`）を指定する                                | <span className="underline decoration-dotted">Tokyo Olympic</span>              |
+| `underline wavy`     | 線の種類（`text-decoration-style`）を指定する                                | <span className="underline decoration-wavy">Tokyo Olympic</span>                |
+| `line-through`       | 打ち消し線                                                                   | <span className="line-through">Tokyo Olympic</span>                             |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+以下の 4 つのプロパティの値をまとめて設定できるショートハンドです。記述する順番は不同で、スペースで区切って指定することができます。
+
+- [`text-decoration-line`](/text-decoration-line) <span className="text-sm text-twhite-100">（傍線の種類。下線、打ち消し線など）</span>
+  | value | description | |
+  | :----------------------- | :---------------- | :------------------------------------------------------------------------------------ |
+  | `none` | 傍線なし | <span>Tokyo Olympics</span> |
+  | `underline` | 下線 | <span className="underline">Tokyo Olympics</span> |
+  | `overline` | 上線 | <span className="overline">Tokyo Olympics</span> |
+  | `line-through` | 打ち消し線 | <span className="line-through">Tokyo Olympics</span> |
+  | `underline line-through` | 下線 + 打ち消し線 | <span className="[text-decoration-line:underline_line-through]">Tokyo Olympics</span> |
+- [`text-decoration-color`](/text-decoration-color) <span className="text-sm text-twhite-100">（傍線の色）</span>
+  | value | description | |
+  | :---------------- | :------------- | ------------------------------------------------------------------------------ |
+  | `hotpink` | 色名による指定 | <span className="underline decoration-[hotpink]">Tokyo Olympics</span> |
+  | `rgb(56, 189, 248)` | rgb による指定 | <span className="underline decoration-[rgb(56_189_248)]">Tokyo Olympics</span> |
+- [`text-decoration-style`](/text-decoration-style) <span className="text-sm text-twhite-100">（傍線の種類。点線、波線など）</span>
+  | value | description | |
+  | :---------------- | :---------- | :------------------------------------------------------------------ |
+  | `solid` (default) | 実線 | <span className="underline">Tokyo Olympics</span> |
+  | `double` | 二重線 | <span className="underline decoration-double">Tokyo Olympics</span> |
+  | `dotted` | 点線 | <span className="underline decoration-dotted">Tokyo Olympics</span> |
+  | `dashed` | 破線 | <span className="underline decoration-dashed">Tokyo Olympics</span> |
+  | `wavy` | 波線 | <span className="underline decoration-wavy">Tokyo Olympics</span> |
+- [`text-decoration-thickness`](/text-decoration-thickness) <span className="text-sm text-twhite-100">（傍線の太さ）</span>
+  | value | description | |
+  | :--------------- | :------------------------------------------------------------------------ | :----------------------------------------------------------------------------- |
+  | `auto` (default) | ブラウザで決められている初期値の太さにする<br/>（Google Chrome では 1px） | <span className="underline">Tokyo Olympic</span> |
+  | `1px` | 太さを指定する | <span className="underline decoration-solid decoration-1">Tokyo Olympic</span> |
+  | `2px` | 太さを指定する | <span className="underline decoration-2">Tokyo Olympic</span> |
+  | `4px` | 太さを指定する | <span className="underline decoration-4">Tokyo Olympic</span> |
+
+{/* ## 注意事項 */}
+
+# 関連
+
+- [`text-decoration-line`](/text-decoration-line)
+- [`text-decoration-color`](/text-decoration-color)
+- [`text-decoration-style`](/text-decoration-style)
+- [`text-decoration-thickness`](/text-decoration-thickness)
+- [`text-underline-offset`](/text-underline-offset)
+
+# 参照
+
+- 参照

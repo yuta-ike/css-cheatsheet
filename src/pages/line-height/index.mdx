@@ -1,0 +1,42 @@
+---
+title: line-height
+description: 1行の高さを指定する
+category: タイポグラフィ（レイアウト）
+slug: line-height
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value    | description                                                                   |
+| :------- | :---------------------------------------------------------------------------- |
+| `normal` | ブラウザが指定する初期値                                                      |
+| `1.2`    | `font-size`からの割合で指定する（この場合、`font-size`の 1.2 倍の高さとなる） |
+| `20px`   | px で指定する                                                                 |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+行の高さを指定します。`font-size`より大きな値を指定することで、行間を広く取ることができます。
+
+## よく利用する値
+
+数値（単位なし）、または`px`で指定する場合が多いです。
+
+数値が指定された場合は`font-size`からの倍率となります。
+`font-size: 16px;`の場合に`line-height: 1.5;`を指定すれば、行高は`16px × 1.5 = 24px`となります。
+
+px で指定された場合はその値が行の高さとなります。
+
+# 関連
+
+- [letter-spacing](/letter-spacing) <span className="text-sm">（文字の間隔を指定）</span>
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/line-height)

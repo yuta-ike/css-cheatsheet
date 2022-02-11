@@ -1,0 +1,13 @@
+.style-1 {
+  text-underline-offset: 0px;
+}
+.style-2 {
+  text-underline-offset: 1px;
+}
+.style-3 {
+  text-underline-offset: 4px;
+}
+.line {
+  text-decoration-line: underline;
+  text-decoration-color: rgb(56, 189, 248);
+}

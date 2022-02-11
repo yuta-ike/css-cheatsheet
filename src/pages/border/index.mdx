@@ -1,0 +1,70 @@
+---
+title: border
+description: 枠線の設定をまとめて記述する
+category: 枠線
+slug: border
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value                          | description                                       |
+| :----------------------------- | :------------------------------------------------ |
+| `1px solid rgb(56, 189, 248)`  | 1px の実線の`rgb(56, 189, 248)`色の枠線を設定する |
+| `1px rgb(56, 189, 248) dashed` | 1px の破線の`rgb(56, 189, 248)`色の枠線を設定する |
+| `rgb(56, 189, 248) dotted 1px` | 1px の点線の`rgb(56, 189, 248)`色の枠線を設定する |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+`border-width`, `border-style`, `border-color`のプロパティをまとめて設定するショートハンドです。
+通常これらを別々に設定することは稀で、`border`でまとめて指定する場合が多いです。
+
+|                |                            |                                              |
+| :------------- | :------------------------- | :------------------------------------------- |
+| `border-width` | 枠線の幅を指定します       | `px`で指定する場合がほとんどです             |
+| `border-style` | 枠線のスタイルを指定します | `solid` `dashed` `dotted` `double` etc...(※) |
+| `border-color` | 枠線の色を指定します       |                                              |
+
+<span className="text-twhite-50 text-sm">
+  ※ `ridge` `groove` `inset` `outset` などがありますが、ほぼ使わないでしょう
+</span>
+
+<div className="!mt-12 text-twhite-100">以下の二つは等価です。</div>
+
+```css
+.box {
+  border: 2px solid rgb(56, 189, 248);
+}
+
+.box {
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(56, 189, 248);
+}
+```
+
+## 境界線を個別に指定する
+
+境界線を個別に指定するには、`border-top`, `border-right`, `border-bottom`, `border-left`を利用します。もちろん、`border-top-width`などを利用して個別に設定することも可能です。
+
+```css
+.box {
+  /* 上下にのみ枠線を引く */
+  border-top: 2px solid rgb(56, 189, 248);
+  border-bottom: 2px solid rgb(56, 189, 248);
+}
+```
+
+# 関連
+
+- 関連
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/border)

@@ -1,0 +1,39 @@
+---
+title: text-decoration-style
+description: 傍線の種類を指定します
+category: タイポグラフィ（デザイン）
+slug: text-decoration-style
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value             | description |                                                                     |
+| :---------------- | :---------- | :------------------------------------------------------------------ |
+| `solid` (default) | 実線        | <span className="underline">Tokyo Olympics</span>                   |
+| `double`          | 二重線      | <span className="underline decoration-double">Tokyo Olympics</span> |
+| `dotted`          | 点線        | <span className="underline decoration-dotted">Tokyo Olympics</span> |
+| `dashed`          | 破線        | <span className="underline decoration-dashed">Tokyo Olympics</span> |
+| `wavy`            | 波線        | <span className="underline decoration-wavy">Tokyo Olympics</span>   |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+傍線の種類を指定します。`solid`（実線）, `double`（二重線）, `dotted`点線, `dashed`破線, `wavy`（波線）の 5 種類を指定できます。
+
+通常は[`text-decoration`](/text-decoration)プロパティで、傍線に関する値をまとめて設定することが多いです。
+
+# 関連
+
+- [`text-decoration`](/text-decoration)
+- [`text-decoration-line`](/text-decoration-line)
+- [`text-decoration-color`](/text-decoration-color)
+- [`text-decoration-thickness`](/text-decoration-thickness)
+- [`text-underline-offset`](/text-underline-offset)
+
+# 参照

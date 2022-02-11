@@ -1,0 +1,12 @@
+.tab-wrapper > div > pre {
+  /* max-height: 320px; */
+  @apply !border-0;
+}
+
+.tab-wrapper > div {
+  @apply !my-0 w-full shrink-0;
+}
+
+.tab-wrapper > div:not(.selected) {
+  @apply hidden;
+}
