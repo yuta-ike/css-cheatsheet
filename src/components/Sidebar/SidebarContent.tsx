@@ -42,7 +42,10 @@ const SidebarContent = ({ className }: SidebarContent) => {
             >
               C
             </span>
-            <p className="font-bold leading-none tracking-wide text-twhite-400">CSS CheetBook</p>
+            <p className="align-middle font-bold leading-none tracking-wide text-twhite-400">
+              CSS CheetBook
+              <span className="ml-2 rounded-sm bg-sky-600 px-1 text-sm">beta</span>
+            </p>
           </a>
         </Link>
       </div>

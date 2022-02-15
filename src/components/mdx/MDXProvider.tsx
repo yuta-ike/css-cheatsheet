@@ -56,7 +56,7 @@ const MDXComponentsProvider = ({ meta, children, headings }: ComponentsProviderP
       })
     }, option)
     const ids = [
-      meta.title,
+      encodeURIComponent(meta.title),
       ...headings.map(({ id, children }) => [id, children.map(({ id }) => id)]).flat(2),
     ]
     ids.forEach((id) => {

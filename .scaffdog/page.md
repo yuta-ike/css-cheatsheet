@@ -33,18 +33,6 @@ import Snippet, { Preview, source } from "./\_snippet/index.html"
 
 # 概要
 
-{/_ ## 注意事項 _/}
-
-# Example
-
-\`\`\`html
-
-\`\`\`
-
-\`\`\`css
-
-\`\`\`
-
 # 関連
 
 - 関連
