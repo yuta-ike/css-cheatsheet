@@ -1,0 +1,22 @@
+.input-shadow:focus {
+  /* @@ */
+  /* アウトラインを非表示に */
+  outline: none;
+  /* 代わりにbox-shadowでアウトラインを表示 */
+  box-shadow: 0 0 0 2px #5a6ff9;
+  /* /@@ */
+}
+
+.input {
+  padding: 8px 20px;
+  border: 1px solid rgb(156, 163, 175);
+  background: rgb(71, 85, 105);
+  border-radius: 999px;
+}
+.input::placeholder {
+  color: rgb(209, 213, 219);
+}
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
