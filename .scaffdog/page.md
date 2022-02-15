@@ -1,41 +1,39 @@
 ---
-name: 'page'
-root: 'src/pages'
-output: '**/*'
+name: "page"
+root: "src/pages"
+output: "**/*"
 ignore: []
 questions:
-  value: 'Enter title:'
+  value: "Enter title:"
 ---
 
 # `{{ inputs.value }}/index.mdx`
 
-
 ```markdown
 ---
-title: {{ inputs.value }}
+title: { { inputs.value } }
 description:
 category:
-slug: {{ inputs.value }}
+slug: { { inputs.value } }
 ---
 
 import Demo from "@/components/mdx/components/Demo.tsx"
-import Snippet, { Preview, source } from "./_snippet/index.html"
+import Snippet, { Preview, source } from "./\_snippet/index.html"
 
-|value|description|
-|:--|:--|
-|``||
-|``||
+| value | description |
+| :---- | :---------- |
+| ``    |             |
+| ``    |             |
 
 # Demo
 
 <Demo demo={<Preview />} source={source}>
-  <Snippet />
+<Snippet />
 </Demo>
 
 # 概要
 
-
-{/* ## 注意事項 */}
+{/_ ## 注意事項 _/}
 
 # Example
 
@@ -48,19 +46,22 @@ import Snippet, { Preview, source } from "./_snippet/index.html"
 \`\`\`
 
 # 関連
+
 - 関連
 
 # 参照
+
 - [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/{{ inputs.value }})
 ```
 
 # `{{ inputs.value }}/_snippet/index.html`
+
 ```html
-<div>
-  🚧コードスニペットを準備中です...
-</div>
+<div>🚧コードスニペットを準備中です...</div>
 ```
 
 # `{{ inputs.value }}/_snippet/index.module.css`
+
 ```css
+
 ```

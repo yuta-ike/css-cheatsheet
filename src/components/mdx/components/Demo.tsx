@@ -17,9 +17,17 @@ export type DemoProps = {
   demo: React.ReactNode
   children: React.ReactNode
   className?: string
+  backgroundWhite?: boolean
 }
 
-const Demo = ({ children, demo, source, initTab = 0, className }: DemoProps) => {
+const Demo = ({
+  children,
+  demo,
+  source,
+  initTab = 0,
+  className,
+  backgroundWhite = false,
+}: DemoProps) => {
   const {
     state: selectedTab,
     setState: setSelectedTab,
@@ -102,7 +110,7 @@ const Demo = ({ children, demo, source, initTab = 0, className }: DemoProps) => 
 
   return (
     <div className={classNames(className, "!mt-4")}>
-      <DemoBox>{demo}</DemoBox>
+      <DemoBox backgroundWhite={backgroundWhite}>{demo}</DemoBox>
       <div>
         <div className="mt-4 flex items-center justify-between">
           <div className="grid grid-cols-2 gap-x-1" role="tablist" aria-label="デモのソースコード">

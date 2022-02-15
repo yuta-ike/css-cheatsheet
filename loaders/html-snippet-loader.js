@@ -82,7 +82,10 @@ export const Preview = () => (
   <>
     ${
       processedHtml
-        .replace(/class=\"(.+)\"/g, `className={"$1".split(" ").map(cls => styles[cls]).join(" ")}`)
+        .replace(
+          /class=\"([^\"]+)\"/g,
+          `className={"$1".split(" ").map(cls => styles[cls]).join(" ")}`,
+        )
         .trim() /* TODO: react系のメソッドで書き換え */
     }
   </>
