@@ -68,7 +68,7 @@ import Snippet, { Preview, source } from "./_snippet/index.html"
 
 <input
   type="text"
-  className="p-2 border border-gray-400 rounded placeholder:text-gray-300 bg-slate-600 bordde  !mt-8 !mb-10"
+  className="p-2 border border-gray-400 rounded placeholder:text-gray-300 bg-slate-600 bordde !mt-8 !mb-10"
   placeholder="Click me!!"
 />
 タップすると青い枠線が出現すると思います（ブラウザによってはデザインが異なるかもしれません）。この青い枠線がアウトラインです。
@@ -79,7 +79,7 @@ import Snippet, { Preview, source } from "./_snippet/index.html"
 
 アウトラインを無効化する場合は、以下のような対策を行う必要があります。
 
-- `border`や`box-shadow`を用いて代替の表現を行う
+- [`border`](/border)や[`box-shadow`](/box-shadow#アウトラインの代替表現を行う)を用いて代替の表現を行う
 - `focus-visible`で`outline`を指定する
 
 例えばこのウェブサイトの左上（PC 表示）にある[「Quick search」](#search)は、`outline`を無効化し、`border`でフォーカスを表現しています。
@@ -90,6 +90,7 @@ import Snippet, { Preview, source } from "./_snippet/index.html"
 
 - [border](/border)
 - [フォーカス時のアウトラインを無効化する](/article/disable-focus-outline)
+- [box-shadow](/box-shadow)
 
 # 参照
 
