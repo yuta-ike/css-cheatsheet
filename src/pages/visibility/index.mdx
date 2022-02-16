@@ -1,0 +1,36 @@
+---
+title: visibility
+description: 表示・非表示を設定します
+category: エフェクト
+slug: visibility
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value               | description  |
+| :------------------ | :----------- |
+| `visible` (default) | 表示する     |
+| `hidden`            | 非表示にする |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+要素を非表示にします。
+
+非表示ですが、その要素が表示される領域は確保されます。
+Demo では、itemB が`hidden`になったとしても、itemB があったスペースは確保されています。
+これはつまり、要素が完全に削除されるわけではなく、「スペースは確保されるが描画はされない」状態であると言えます。
+
+# 関連
+
+- [要素を非表示にする](#)
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/visibility)

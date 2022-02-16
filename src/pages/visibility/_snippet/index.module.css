@@ -1,0 +1,32 @@
+.item-hidden {
+  /* @ */
+  visibility: hidden;
+}
+
+.item-a {
+  background: rgb(226, 84, 84);
+}
+.item-b {
+  background: rgb(62, 172, 58);
+}
+.item-c {
+  background: rgb(2, 132, 199);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.list {
+  display: flex;
+}
+.item {
+  flex: 1;
+  padding: 12px;
+  margin-right: 12px;
+  border-radius: 4px;
+}
+.code {
+  font-size: 12px;
+}
