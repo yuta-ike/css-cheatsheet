@@ -1,0 +1,73 @@
+---
+title: opacity
+description: 透明度を指定します
+category: エフェクト
+slug: opacity
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import DemoBox from "@/components/mdx/components/DemoBox.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value | description      |
+| :---- | :--------------- |
+| `0.5` | 透明度を指定する |
+| `50%` | 透明度を指定する |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+`%`または小数で透明度を指定します。
+opacity を（`1`や`100%`以外に）指定した場合、その要素全体の透明度が変化します。要素にテキストや他の要素が含まれる場合、それらの透明度も変化します。
+
+テキストの透明度を下げたくない（背景色のみ透明度を上げたい）場合は、[`background`](/background)で透明色を指定しましょう。
+
+また要素を非表示にするために`opacity: 0;`を指定することは不適切である場合が多いです。
+例えば`button`要素を透明にしても、マウスを合わせるとクリックが可能です。
+
+<DemoBox className="grid grid-cols-2 gap-12">
+  <div className="flex items-center space-x-8">
+    <div className="space-y-2">
+      <code>opacity: 100%;</code>
+      <p className="text-sm text-twhite-50">右の枠内のボタンをクリックしてください</p>
+    </div>
+    <div className="p-2 border border-red-400 rounded shrink-0">
+      <button
+        onClick={() => window.alert("ボタンをクリックしました")}
+        className="bg-sky-600 px-4 py-2 rounded hover:bg-sky-700 transition"
+      >
+        click me
+      </button>
+    </div>
+  </div>
+  <div className="flex items-center space-x-8">
+    <div className="space-y-2">
+      <code>opacity: 0%;</code>
+      <p className="text-sm text-twhite-50">右の枠内の透明なボタンをクリックしてください</p>
+    </div>
+    <div className="p-2 border border-red-400 rounded shrink-0">
+      <button
+        onClick={() => window.alert("透明なボタンをクリックしました")}
+        className="bg-sky-600 px-4 py-2 rounded hover:bg-sky-700 transition opacity-0"
+      >
+        click me
+      </button>
+    </div>
+  </div>
+</DemoBox>
+
+要素を非表示にする方法はいくつかありますので、[こちら](#)をご覧ください。
+
+# 関連
+
+- [`background`](/background)
+- [要素を非表示にする](#)
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/opacity)
