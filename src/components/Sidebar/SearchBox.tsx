@@ -17,10 +17,14 @@ const SearchBox = forwardRef<HTMLInputElement, SearchBoxProps>(function SearchBo
         id={id}
         type="text"
         placeholder="Quick search..."
-        className={classNames("peer bg-transparent px-3 py-2 focus:outline-none", className)}
+        className={classNames(
+          "peer bg-transparent px-3 py-2 [transition:background-color_5000s_ease-in-out_0s,color_5000s_ease-in-out_0s] focus:outline-none",
+          className,
+        )}
         required
         ref={ref}
         autoCorrect="false"
+        autoComplete="false"
         {...props}
       />
       <div className="peer-focus:delay-400 absolute right-3 flex items-center space-x-0.5 text-twhite-400/70 opacity-0 transition-opacity peer-invalid:opacity-100 peer-focus:opacity-0">
