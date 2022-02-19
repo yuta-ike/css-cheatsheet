@@ -11,14 +11,14 @@ questions:
 
 ```markdown
 ---
-title: { { inputs.value } }
+title: {{ inputs.value }}
 description:
 category:
-slug: { { inputs.value } }
+slug: {{ inputs.value }}
 ---
 
 import Demo from "@/components/mdx/components/Demo.tsx"
-import Snippet, { Preview, source } from "./\_snippet/index.html"
+import Snippet, { Preview, source } from "./_snippet/index.html"
 
 | value | description |
 | :---- | :---------- |
