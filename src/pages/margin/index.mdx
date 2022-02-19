@@ -1,0 +1,60 @@
+---
+title: margin
+description: 要素の外側の余白を指定する
+category: 余白
+slug: margin
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value              | description                                |
+| :----------------- | :----------------------------------------- |
+| `4px`              | 上下左右の margin を指定する               |
+| `4px 6px`          | 上下、左右の margin をそれぞれ指定する     |
+| `4px 6px 8px 12px` | 上、右、下、左の margin をそれぞれ指定する |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+要素の外側の余白を指定します。ここでいう外側とは、枠線（`border`）の外側を指します。
+`padding`との使い分けについては[余白のスタイリング](/article/space)をご覧ください。
+
+## 指定する値
+
+| value             | description                                                                                |
+| :---------------- | :----------------------------------------------------------------------------------------- |
+| `4px`             | 1 つの値が指定された場合、上下左右全てに同じ大きさの margin を設定します                   |
+| `4px 6px`         | 2 つの値が指定された場合、1 つ目の値が上下、2 つ目の値が左右の margin に設定されます       |
+| `4px 6px 2px 8px` | 4 つの値が指定された場合、順に上、右、下、左の margin に設定されます（`時計回り`の順です） |
+
+## margin を個別に指定する
+
+margin を個別に指定するには、`margin-top`, `margin-right`, `margin-bottom`, `margin-left`を利用します。
+
+```css
+.box {
+  margin-top: 4px;
+  margin-right: 8px;
+  margin-bottom: 12px;
+  margin-left: 16px;
+}
+
+/* 以下と等価 */
+.box {
+  margin: 4px 8px 12px 16px;
+}
+```
+
+# 関連
+
+- [余白のスタイリング](/article/space)
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/margin)

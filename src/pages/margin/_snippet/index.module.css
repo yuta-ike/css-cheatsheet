@@ -1,0 +1,36 @@
+.box-target-1 {
+  margin: 0px;
+}
+.box-target-2 {
+  margin: 12px;
+}
+.box-target-3 {
+  margin: 24px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.column {
+  flex: 1;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.08) 7px,
+    transparent 0,
+    transparent 14px
+  );
+}
+.column + .column {
+  margin-left: 48px;
+}
+.box {
+  background: rgb(2, 132, 199);
+  padding: 8px 12px;
+  text-align: center;
+  font-family: monospace;
+}
+.box:nth-child(2) {
+  background: rgb(219, 155, 16);
+}
