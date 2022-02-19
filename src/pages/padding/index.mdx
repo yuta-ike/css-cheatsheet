@@ -1,0 +1,65 @@
+---
+title: padding
+description: 要素の内側の余白を指定する
+category: 余白
+slug: padding
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value              | description                                 |
+| :----------------- | :------------------------------------------ |
+| `4px`              | 上下左右の padding を指定する               |
+| `4px 6px`          | 上下、左右の padding をそれぞれ指定する     |
+| `4px 6px 8px 12px` | 上、右、下、左の padding をそれぞれ指定する |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+要素の内側の余白を指定します。ここでいう内側とは、枠線（`border`）の内側を指します。
+`margin`との使い分けについては[余白のスタイリング](/article/space)をご覧ください。
+
+## 指定する値
+
+| value             | description                                                                                 |
+| :---------------- | :------------------------------------------------------------------------------------------ |
+| `4px`             | 1 つの値が指定された場合、上下左右全てに同じ大きさの padding を設定します                   |
+| `4px 6px`         | 2 つの値が指定された場合、1 つ目の値が上下、2 つ目の値が左右の padding に設定されます       |
+| `4px 6px 2px 8px` | 4 つの値が指定された場合、順に上、右、下、左の padding に設定されます（`時計回り`の順です） |
+
+## padding を個別に指定する
+
+padding を個別に指定するには、`padding-top`, `padding-right`, `padding-bottom`, `padding-left`を利用します。
+
+```css
+.box {
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+}
+
+/* 以下と等価 */
+.box {
+  padding: 4px 8px 12px 16px;
+}
+```
+
+## 注意事項
+
+`<tr>`, `<thead>`, `<tbody>`などのテーブル関連のタグに対しては利用することはできません。
+テーブル関連の余白スタイリングについては[Table の スタイリング](/article/table)をご覧ください。
+
+# 関連
+
+- [余白のスタイリング](/article/space)
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/padding)

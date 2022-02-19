@@ -834,3 +834,4 @@ export default SIDEBAR_SECTIONS
 // アンチエイリアス
 // recipe: 中央揃え
 // グラデーション
+// ストライプ・水玉
