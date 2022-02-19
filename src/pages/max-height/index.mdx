@@ -1,0 +1,36 @@
+---
+title: max-height
+description: 要素の最大高さを指定する
+category: 幅・高さ
+slug: max-height
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value   | description         |
+| :------ | :------------------ |
+| `100px` | `px`で幅を指定する  |
+| `20rem` | `rem`で幅を指定する |
+| `100%`  | `%`で幅を指定する   |
+
+# Demo
+
+200px より大きい高さは、200px に丸められていることがわかります。
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+要素の最大高さを指定します。`height`が最大幅を上回っていた場合、`max-height`の値が要素の幅となります。
+
+# 関連
+
+- [height](/height)
+- [min-height](/min-height)
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/max-height)

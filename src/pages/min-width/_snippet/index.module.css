@@ -1,0 +1,36 @@
+.box-1 {
+  width: 100%;
+  min-width: 300px;
+}
+.box-2 {
+  width: 80%;
+  min-width: 300px;
+}
+.box-3 {
+  width: 60%;
+  min-width: 300px;
+}
+.box-4 {
+  width: 40%;
+  min-width: 300px;
+}
+
+.box-base {
+  width: 300px;
+  background: rgb(149, 26, 197) !important;
+  border-radius: 4px !important;
+}
+.box {
+  border-radius: 12px;
+  color: white;
+  font-family: monospace;
+  font-weight: 700;
+  display: flex;
+  padding: 8px 16px;
+  margin-bottom: 8px;
+  background: rgb(14, 165, 233);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}

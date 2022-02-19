@@ -1,0 +1,38 @@
+---
+title: min-width
+description: 要素の最小幅を指定する
+category: 幅・高さ
+slug: min-width
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value   | description             |
+| :------ | :---------------------- |
+| `100px` | `px`で最小幅を指定する  |
+| `20rem` | `rem`で最小幅を指定する |
+| `100%`  | `%`で最小幅を指定する   |
+
+# Demo
+
+ウィンドウ幅を変化させ挙動を確認してください。
+
+青いボックスはそれぞれ、幅が`100%`, `80%`, `60%`, `40%`で指定されています。しかし`min-width: 300px;`が指定されているため、幅が`300px`を下回ることはありません。
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+要素の最小幅を指定する。`width`が最小幅を下回っていた場合、`min-width`の値が要素の幅となる。
+
+# 関連
+
+- [width](/width)
+- [max-width](/max-width)
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/min-width)
