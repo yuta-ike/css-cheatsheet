@@ -6,7 +6,12 @@ slug: margin
 ---
 
 import Demo from "@/components/mdx/components/Demo.tsx"
+import DemoBox from "@/components/mdx/components/DemoBox.tsx"
 import Snippet, { Preview, source } from "./_snippet/index.html"
+import HeaderSnippet, {
+  Preview as HeaderPreview,
+  source as headerSource,
+} from "./_snippet/header.html"
 
 | value              | description                                |
 | :----------------- | :----------------------------------------- |
@@ -50,6 +55,121 @@ margin を個別に指定するには、`margin-top`, `margin-right`, `margin-bo
   margin: 4px 8px 12px 16px;
 }
 ```
+
+## margin の相殺
+
+隣あったブロックレベル要素が持つ margin が接するとき、margin 同士が相殺されます。Flex レイアウトを利用する場合には相殺は発生しません。
+
+以下の例では、青色のブロックの上下に`20px`のマージンを設定しています。Flex レイアウトの場合は要素間の距離が`20px + 20px = 40px`であるのに対し、デフォルトの場合は相殺し合うため`20px`となります。
+
+<DemoBox className="grid grid-cols-2 gap-6">
+  <div className="flex flex-col">
+    <p className="text-sm">デフォルト</p>
+    <div className="bg-stripe h-max">
+      <div className="h-[30px] bg-sky-600 my-5 text-center">
+        <code className="text-sm">margin: 20px 0;</code>
+      </div>
+      <div className="h-[30px] bg-sky-600 my-5 text-center">
+        <code className="text-sm">margin: 20px 0;</code>
+      </div>
+      <div className="h-[30px] bg-sky-600 my-5 text-center">
+        <code className="text-sm">margin: 20px 0;</code>
+      </div>
+    </div>
+  </div>
+  <div className="flex flex-col">
+    <p className="text-sm">Flexレイアウト</p>
+    <div className="flex flex-col bg-stripe">
+      <div className="h-[30px] bg-sky-600 my-5 text-center">
+        <code className="text-sm">margin: 20px 0;</code>
+      </div>
+      <div className="h-[30px] bg-sky-600 my-5 text-center">
+        <code className="text-sm">margin: 20px 0;</code>
+      </div>
+      <div className="h-[30px] bg-sky-600 my-5 text-center">
+        <code className="text-sm">margin: 20px 0;</code>
+      </div>
+    </div>
+  </div>
+</DemoBox>
+
+また以下の例では、上部に 20px、下部に 10px の margin を設定しています。
+Flex レイアウトの場合は`20px + 10px = 30px`の間隔になりますが、デフォルトの場合は 10px が打ち消され、20px の間隔となります。
+
+<DemoBox className="grid grid-cols-2 gap-6">
+  <div className="flex flex-col">
+    <p className="text-sm">デフォルト</p>
+    <div className="bg-stripe h-max">
+      <div className="h-[30px] bg-sky-600 mt-5 mb-2.5 text-center">
+        <code className="text-sm">margin: 20px 0px 10px 0px;</code>
+      </div>
+      <div className="h-[30px] bg-sky-600 mt-5 mb-2.5 text-center">
+        <code className="text-sm">margin: 20px 0px 10px 0px;</code>
+      </div>
+      <div className="h-[30px] bg-sky-600 mt-5 mb-2.5 text-center">
+        <code className="text-sm">margin: 20px 0px 10px 0px;</code>
+      </div>
+    </div>
+  </div>
+  <div className="flex flex-col">
+    <p className="text-sm">Flexレイアウト</p>
+    <div className="flex flex-col bg-stripe">
+      <div className="h-[30px] bg-sky-600 mt-5 mb-2.5 text-center">
+        <code className="text-sm">margin: 20px 0px 10px 0px;</code>
+      </div>
+      <div className="h-[30px] bg-sky-600 mt-5 mb-2.5 text-center">
+        <code className="text-sm">margin: 20px 0px 10px 0px;</code>
+      </div>
+      <div className="h-[30px] bg-sky-600 mt-5 mb-2.5 text-center">
+        <code className="text-sm">margin: 20px 0px 10px 0px;</code>
+      </div>
+    </div>
+  </div>
+</DemoBox>
+
+# 応用
+
+## 上下左右中央揃え
+
+上下、または左右の`margin`に`auto`を指定することで、中央揃えを実現することができます。現在、中央揃えを行う場合は Flex レイアウトを利用する場合が多いです。
+
+<DemoBox className="grid grid-cols-4 gap-3">
+  <div>
+    <code className="text-sm">default</code>
+    <div className="w-full border border-red-400 rounded-sm">
+      <div className="w-8 h-8 bg-gray-400 rounded-sm border border-gray-600" />
+    </div>
+  </div>
+  <div>
+    <code className="text-sm">margin-right: auto;</code>
+    <div className="w-full border border-red-400 rounded-sm">
+      <div className="w-8 h-8 bg-sky-400 rounded-sm border border-sky-600 mr-auto" />
+    </div>
+  </div>
+  <div>
+    <code className="text-sm">margin: 0 auto;</code>
+    <div className="w-full border border-red-400 rounded-sm">
+      <div className="w-8 h-8 bg-sky-400 rounded-sm border border-sky-600 mx-auto" />
+    </div>
+  </div>
+  <div>
+    <code className="text-sm">margin-left: auto;</code>
+    <div className="w-full border border-red-400 rounded-sm">
+      <div className="w-8 h-8 bg-sky-400 rounded-sm border border-sky-600 ml-auto" />
+    </div>
+  </div>
+</DemoBox>
+
+## 可能な限り余白を空ける
+
+こちらも`auto`を利用したテクニックです。Flex レイアウトの横並びの中のある要素に`auto`を適用することで、可能な限り余白を大きく取ることができます。
+
+このデモでは、検索ボックスに`margin-right: auto;`を適用することで、検索ボックスとログインボタンの間の余白を広げています。
+同様のデザインは、ログインボタンに`margin-left: auto;`を適用しても実現できます。
+
+<Demo demo={<HeaderPreview />} source={headerSource}>
+  <HeaderSnippet />
+</Demo>
 
 # 関連
 

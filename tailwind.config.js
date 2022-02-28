@@ -11,6 +11,10 @@ const config = {
           400: "#f5f5f5",
         },
       },
+      backgroundImage: {
+        stripe:
+          "repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08) 7px, transparent 0, transparent 14px)",
+      },
     },
     fontFamily: {
       sans: [
