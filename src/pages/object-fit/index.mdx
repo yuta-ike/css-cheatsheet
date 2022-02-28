@@ -1,0 +1,40 @@
+---
+title: object-fit
+description: 画像の伸縮を指定
+category: 画像
+slug: object-fit
+---
+
+import Demo from "@/components/mdx/components/Demo.tsx"
+import Snippet, { Preview, source } from "./_snippet/index.html"
+
+| value          | description                                                                                                |
+| :------------- | :--------------------------------------------------------------------------------------------------------- |
+| `fill` default | 画像を領域のサイズに合わせて変形させて表示します                                                           |
+| `contain`      | 画像全体が領域内に収まるように配置されます。縦横比によっては余白が生じますが、必ず画像全体が表示されます。 |
+| `cover`        | 全体が画像で覆われるように配置されます。余白が生じませんが、画像の一部が切り取られる場合があります。       |
+
+# Demo
+
+<Demo demo={<Preview />} source={source}>
+  <Snippet />
+</Demo>
+
+# 概要
+
+画像の伸縮を指定します。`contain`, `cover`の 2 つのプロパティを押さえておけば良いでしょう。
+
+`contain`は画像の縦横比によらず全体を表示させたいとき、`cover`は余白を作らず領域いっぱいに画像を表示させたいときに利用します。
+
+## 注意事項
+
+`cover`を指定する場合、`<img>`の`width`, `height`を指定する必要があります。指定しない場合、`<img>`要素が親要素をはみ出してしまう場合があります。
+親要素のサイズに合わせたい場合は、`width`, `height`に`100%`を指定します。
+
+# 関連
+
+- 関連
+
+# 参照
+
+- [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/object-fit)
